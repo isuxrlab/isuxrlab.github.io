@@ -1522,3 +1522,88 @@ button:focus {
 .social-links a:hover {
   transform: translateY(-3px);
 }
+
+/* === Circular GIF Orbit Animation with White Background === */
+.hero-gif-circle {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-gif-circle img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #ffffff; /* ✅ soft white background */
+  padding: 8px;        /* space between GIF and white edge */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-gif-circle img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Center GIF */
+.hero-gif-circle .center-logo {
+  position: absolute;
+  z-index: 2;
+}
+.hero-gif-circle .center-logo img {
+  width: 160px;
+  height: 160px;
+  border: 4px solid rgba(255,255,255,0.4);
+  background: #fff; /* ✅ keeps center clean too */
+  padding: 6px;
+}
+
+/* Orbit images positioning */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: -125px center;
+  animation: orbit 20s linear infinite;
+}
+
+.orbit1 { animation-delay: 0s; }
+.orbit2 { animation-delay: 5s; }
+.orbit3 { animation-delay: 10s; }
+.orbit4 { animation-delay: 15s; }
+
+/* Orbit animation */
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(180px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(180px) rotate(-360deg); }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-gif-circle {
+    width: 300px;
+    height: 300px;
+  }
+  .hero-gif-circle img {
+    width: 120px;
+    height: 120px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-gif-circle {
+    width: 250px;
+    height: 250px;
+  }
+  .hero-gif-circle img {
+    width: 100px;
+    height: 100px;
+    padding: 4px;
+  }
+}
