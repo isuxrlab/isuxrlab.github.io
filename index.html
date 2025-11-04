@@ -24,6 +24,63 @@
 
 
 </head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const el = document.getElementById("typer");
+
+  // Words to cycle through:
+  const words = [
+     "Extended Reality",
+  "Artificial Intelligence",
+  "Robotics and Automation",
+  "Digital Healthcare Technologies",
+  "3D Animation",
+  "Biomedical Engineering",
+  "Game Design",
+    "Human-Computer Interaction",
+    
+    "Data Visualization"
+  ];
+
+  const typeSpeed = 70;     // ms per character while typing
+  const eraseSpeed = 45;    // ms per character while erasing
+  const holdTime  = 1400;   // pause after a word is completed
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let typing = true;
+
+  function tick() {
+    const word = words[wordIndex];
+
+    if (typing) {
+      // type forward
+      charIndex++;
+      el.textContent = word.slice(0, charIndex);
+
+      if (charIndex === word.length) {
+        typing = false;
+        return setTimeout(tick, holdTime);
+      }
+      return setTimeout(tick, typeSpeed);
+    } else {
+      // erase backward
+      charIndex--;
+      el.textContent = word.slice(0, charIndex);
+
+      if (charIndex === 0) {
+        typing = true;
+        wordIndex = (wordIndex + 1) % words.length;
+        return setTimeout(tick, 300); // small pause before next word
+      }
+      return setTimeout(tick, eraseSpeed);
+    }
+  }
+
+  tick();
+});
+</script>
   
   <body>
 
@@ -75,7 +132,8 @@
               <div class="row space-100">
                   <div class="col-lg-6 col-md-12 col-xs-12">
                       <div class="contents">
-                          <h2 class="head-title">Designing the Future with Extended Reality</h2>
+                          <h2 class="head-title"> Designing  the  Future  with  </h2>
+                          <h2> <span id="typer" class="typer"></span>  </h2>
                           <p>
                               At ISU XR Lab, we develop immersive VR/AR/MR experiences that transform healthcare, engineering, education, and human interaction. Join us in shaping the next wave of spatial computing.
 
