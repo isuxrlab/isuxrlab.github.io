@@ -1607,3 +1607,33 @@ button:focus {
     padding: 4px;
   }
 }
+
+
+#intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    animation: hideIntro 1s ease forwards;
+    animation-delay: 2s;
+}
+
+#intro img {
+    width: 1050px;
+}
+
+@keyframes hideIntro {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
