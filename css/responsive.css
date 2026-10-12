@@ -61,7 +61,7 @@
     color: #5e629c;
     font-style: italic;
     line-height: 35px; }
-  #team .single-team .team-social-icons {
+  #team .single-team .team-social-icons, #alumni .single-team .team-social-icons {
     bottom: 27%; }
   #blog .blog-item-wrapper h3 {
     font-size: 16px;
@@ -110,7 +110,7 @@
     padding: 30px 15px; }
   #pricing .pricing-table h1 span {
     left: 10%; }
-  #team .single-team, .blog-item-wrapper, .services-item {
+  #team .single-team, #alumni .single-team, .blog-item-wrapper, .services-item {
     margin-bottom: 20px; }
   .contact-img img {
     max-width: 100%;
@@ -262,9 +262,9 @@
   #testimonial {
     margin-bottom: 0;
     background-size: cover; }
-  #team .single-team {
+  #team .single-team, #alumni .single-team {
     margin-bottom: 15px; }
-  #team .single-team .team-social-icons {
+  #team .single-team .team-social-icons, #alumni .single-team .team-social-icons {
     bottom: 22%; }
   #blog .blog-item-wrapper .blog-item-text {
     padding: 20px 15px 15px 15px; }
@@ -403,7 +403,7 @@
     width: 80%; }
   .feature-info {
     width: 68%; }
-  #team .single-team .team-social-icons {
+  #team .single-team .team-social-icons, #alumni .single-team .team-social-icons {
     bottom: 27%; }
   #blog .blog-item-wrapper .blog-item-text {
     padding: 20px 15px 15px 15px; }
